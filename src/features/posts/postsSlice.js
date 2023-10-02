@@ -19,7 +19,7 @@ const initialState = [
         id: '2',
         title: 'Slices...',
         content: "The more I say slice, the more I want pizza.",
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date("2022-03-25"), { minutes: 5 }).toISOString(),
         reactions: {
             thumbsUp: 0,
             wow: 0,
@@ -44,6 +44,7 @@ const postsSlice = createSlice({
                         id: nanoid(),
                         title,
                         content,
+                        date: new Date().toISOString(),
                         userId
                     }
                 }
